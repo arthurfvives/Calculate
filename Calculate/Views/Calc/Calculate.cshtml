@@ -1,0 +1,30 @@
+﻿@model Calculate.Models.CalculateVM
+
+@{
+    ViewData["Title"] = "Calculate";
+}
+
+<h1>Calculate</h1>
+
+<h4>CalculateVM</h4>
+<hr />
+<form asp-action="Calculate" method="post">
+    <div>
+        <label for="Number1">Number 1:</label>
+        <input asp-for="Number1" />
+    </div>
+    <div>
+        <label for="Number2">Number 2:</label>
+        <input asp-for="Number2" />
+    </div>
+    <div>
+        <input type="submit" value="Calculate" />
+    </div>
+</form>
+
+@if (Model != null && Model.Result != 0)
+{
+    <div>
+        <p>Total: @Model.Result</p>
+    </div>
+}
